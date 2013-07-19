@@ -1,0 +1,30 @@
+<?php 
+
+function nul_affiliate_finder_menu(){
+  $items['affiliate_list'] = array(
+  'title' => 'Local Affiliates List',
+  'description' => 'A list and map of local affiliates.',
+  'page callback' => 'affiliate_data',
+  'access callback' => TRUE,
+  );
+  
+  return $items;
+}
+
+function affiliate_data(){
+   $output = '<h2>from external database</h2>';
+   db_set_active('external');
+   $r = db_query('SELECT * from {node} where type = :affiliate', array(':affiliate' => 'affiliate'));
+   
+   foreach($r as $result)
+   {
+    $output .= $result->title .'<br />';
+  }
+  
+   return $output;
+   
+  
+   
+  db_set_active();
+
+}

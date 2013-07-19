@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<playlist version="1" xmlns="http://xspf.org/ns/0/">
+   <trackList>
+      <track>
+         <title>Introduction</title>
+         <location>http://www.youtube.com/watch?v=9mjtt0b4Zh8</location>
+      </track>
+      <track>
+         <title>Presets and Simple Display</title>
+         <location>http://www.youtube.com/watch?v=vTTp9FY-Mt4</location>
+      </track>
+      <track>
+         <title>Basic Playlists</title>
+         <location>http://www.youtube.com/watch?v=djV8Q6oIAjE</location>
+      </track>
+      <track>
+         <title>Advanced Playlists</title>
+         <location>http://www.youtube.com/watch?v=2VyryaY6SbI</location>
+      </track>
+      <track>
+         <title>Player to Player</title>
+         <location>http://www.youtube.com/watch?v=n8JTfQbvSQE</location>
+      </track>
+      <track>
+         <title>Hidden Playlists</title>
+         <location>http://www.youtube.com/watch?v=TM9vS07Vylk</location>
+      </track>
+      <track>
+         <title>Architecture</title>
+         <location>http://www.youtube.com/watch?v=rNAstASZYhU</location>
+      </track>
+      <track>
+         <title>Creating Templates</title>
+         <location>http://www.youtube.com/watch?v=nMoaSEdgVio</location>
+      </track>
+      <track>
+         <title>Media Event Binding</title>
+         <location>http://www.youtube.com/watch?v=GHoy-_ym5do</location>
+      </track>
+   </trackList>
+</playlist>

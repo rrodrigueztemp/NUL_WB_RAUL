@@ -1,0 +1,492 @@
+<?php
+/**
+ * @file
+ * This module provides functions specific to the NUL site.
+ *
+ * @ingroup nul
+ */
+
+/**
+ * Implementation of hook_block_info().
+ */
+function nul_block_info() {
+  $blocks['donate'] = array('info' =>  t('NUL Donate'));
+  $blocks['wtg'] = array('info' =>  t('NUL Ways to Give'));
+  $blocks['store'] = array('info' =>  t('NUL Store'));
+  $blocks['aff-finder'] = array('info' =>  t('NUL Affiliate Finder'));
+  $blocks['occupy'] = array('info' =>  t('Occupy the Vote'));
+  $blocks['conference'] = array('info' =>  t('Conference'));
+  $blocks['pres-desk'] = array('info' =>  t("NUL President's Desk"));
+  $blocks['goals'] = array('info' =>  t('NUL Goals'));
+  $blocks['social'] = array('info' =>  t('NUL Social'));
+  $blocks['latest-pr-events'] = array('info' =>  t('NUL Latest, Press Releases & Events'));
+  $blocks['nul-nav'] = array('info' =>  t('NUL Navigation'));
+  $blocks['nul-banner'] = array('info' =>  t('NUL Banner'));
+  $blocks['nul-ticker'] = array('info' =>  t('NUL Ticker'));
+  $blocks['nul-above-footer'] = array('info' =>  t('NUL Above Footer'));
+  $blocks['nul-footer'] = array('info' =>  t('NUL Footer'));
+  $blocks['nul-header'] = array('info' =>  t('NUL Header'));
+  $blocks['re-marcs'] = array('info' =>  t("NUL Re-Marcs"));
+  $blocks['nul-sponsor-ad'] = array('info' =>  t('NUL Sponsor Ad'));
+  $blocks['nul-newsroom'] = array('info' =>  t('NUL Newsroom'));
+  return $blocks;
+}
+
+/**
+ * Implementation of hook_block_view().
+ */
+function nul_block_view($delta = '') {
+  switch ($delta) {
+    case 'donate':
+        $block['subject'] = '';
+        $block['content'] = nul_donate();
+      break;
+    case 'wtg':
+      $block['subject'] = '';
+      $block['content'] = nul_wtg();
+      break;
+    case 'store':
+        $block['subject'] = '';
+        $block['content'] = nul_store();
+      break;
+    case 'aff-finder':
+        $block['subject'] = '';
+        $block['content'] = nul_aff_finder();
+      break;
+    case 'occupy':
+        $block['subject'] = '';
+        $block['content'] = nul_occupy();
+      break;
+    case 'conference':
+        $block['subject'] = '';
+        $block['content'] = nul_conference();
+      break;
+    case 'pres-desk':
+        $block['subject'] = '';
+        $block['content'] = nul_pres_desk();
+      break;
+    case 'goals':
+        $block['subject'] = '';
+        $block['content'] = nul_goals();
+      break;
+    case 'social':
+        $block['subject'] = '';
+        $block['content'] = nul_social_feeds();
+      break;
+    case 'latest-pr-events':
+        $block['subject'] = '';
+        $block['content'] = nul_latest_pr_events();
+      break;
+    case 'nul-nav':
+        $block['subject'] = '';
+        $block['content'] = nul_nav_links();
+      break;
+    case 'nul-banner':
+        $block['subject'] = '';
+        $block['content'] = nul_banner();
+      break;
+    case 'nul-ticker':
+        $block['subject'] = '';
+        $block['content'] = nul_ticker();
+      break;
+    case 'nul-above-footer':
+        $block['subject'] = '';
+        $block['content'] = nul_above_footer();
+      break;
+    case 'nul-footer':
+        $block['subject'] = '';
+        $block['content'] = nul_footer();
+      break;
+    case 'nul-header':
+        $block['subject'] = '';
+        $block['content'] = nul_header();
+      break;
+    case 're-marcs':
+        $block['subject'] = '';
+        $block['content'] = nul_re_marcs();
+      break;
+    case 'nul-sponsor-ad':
+        $block['subject'] = '';
+        $block['content'] = nul_sponsor_ad();
+      break;
+    case 'nul-newsroom':
+        $block['subject'] = '';
+        $block['content'] = nul_newsroom();
+      break;
+    default:
+      $block = array();
+      break;
+  }
+
+  return $block;
+}
+
+function nul_donate() {
+  drupal_add_css(drupal_get_path('module', 'nul') . '/nul.css');
+  $options = array('attributes' => array('id' => 'donate-block-link'));
+  $output = '
+  <div id="nul-donate-block">';
+  $output .= l('donate', 'content/donate-your-local-affiliate', $options);
+  $output .= '
+  </div>';
+  return $output;
+}
+
+function nul_wtg() {
+  drupal_add_css(drupal_get_path('module', 'nul') . '/nul.css');
+  $options = array('attributes' => array('id' => 'wtg-block-link'));
+  $output = '
+  <div id="wtg-donate-block">';
+  $output .= l('Ways to Give', 'http://iamempowered.com/departments/development#underslider', $options);
+  $output .= '
+  </div>';
+  return $output;
+}
+
+function nul_store() {
+  drupal_add_css(drupal_get_path('module', 'nul') . '/nul.css');
+  $options = array('attributes' => array('id' => 'nul-store-link'));
+  $output = '
+  <div id="nul-store-block">';
+  $output .= l('store', 'http://nul.org/estore', $options);
+  $output .= '
+  </div>';
+  return $output;
+}
+
+function nul_aff_finder() {
+  drupal_add_css(drupal_get_path('module', 'nul') . '/nul.css');
+  $output = '
+  <div id="nul-aff-finder-block">';
+  $output .= '
+  	<div id="nul-aff-finder-inner-title">AFFILIATE LOCATOR
+  	</div>
+  	<div id="nul-aff-finder-inner">
+  		Enter your ZIP to find the nearest Urban League Affiliate
+  	</div>
+  	</div>
+  	<div id="nul-zip-form">';
+  $view = views_get_view('affiliate_map');
+  // Set the display as current.
+  $view->set_display('map_page');
+  // Acquire and attach all of the handlers to the view.
+  $view->init_handlers();
+  $form_state = array(
+    'view' => $view,
+    'display' => $view->display_handler->display,
+    'method' => 'get',
+    'rerender' => TRUE,
+    'no_redirect' => TRUE,
+  );
+  $exposed_form = $view->display_handler->get_plugin('exposed_form');
+  $output .= $exposed_form->render_exposed_form();
+  $output .= '
+  		</div>
+  <div id ="nul-aff-finder-block-btm"></div>';
+  return $output;
+  /*Enter your ZIP to find nearest National Urban League Affiliate*/
+}
+
+function nul_occupy() {
+  $img_path = drupal_get_path('module', 'nul');
+  drupal_add_css($img_path . '/nul.css');
+  $output = '<div id="nul-occupy-block">';
+  $output .= '<div id="nul-occupy></div>';
+  $options = array('attributes' => array('id' => 'nul-occupy-link'));
+  $output .= '<div id="nul-occupy-vote">';
+  $output .= l('occupy', 'http://iamempowered.com/article/2012/07/19/occupy-vote-get-involved', $options);
+  $output .= '</div>';
+  $output .= '</div>';
+  return $output;
+}
+
+function nul_conference() {
+  $img_path = drupal_get_path('module', 'nul');
+  drupal_add_css($img_path . '/nul.css');
+  $output = '<div id="nul-conference-block">';
+  $output .= '<div id="nul-conference-img></div>';
+  $options = array('attributes' => array('id' => 'nul-conference-link'));
+  $output .= '<div id="nul-conference">';
+  $output .= l('1-866-MY-VOTE-1', 'http://1866myvote1.com', $options);
+  $output .= '</div>';
+  $output .= '</div>';
+  return $output;
+}
+
+function nul_pres_desk() {
+  $img_path = drupal_get_path('module', 'nul');
+//  $options = array('attributes' => array('id' => 'nul-corp-link'));
+  $output = '
+  <div id="nul-pres-desk">
+  	<div id="nul-pres-desk-title"><h2>From the President&rsquo;s Desk</h2></div>
+  	<div id="nul-pres-desk-image"><img src="/' . $img_path . '/images/presidents_desk.png" /></div>
+  </div>';
+  return $output;
+}
+
+function nul_goals() {
+  $img_path = drupal_get_path('module', 'nul');
+  $vargs = array(
+      'jobs' => '"Every American has access to jobs with a living wage and good benefits" ',
+      'education' => '"Every American child is ready for college, work and life" ',
+      'housing' => '"Every American lives in safe, decent, affordable and energy efficient housing on fair terms"',
+      'health' => '"Every American has access to quality and affordable health care solutions." ',
+  );
+  $output = '<h2>OUR GOALS</h2>';
+  $options = array('html' => 'TRUE');
+  foreach ($vargs as $varg => $tagline) {
+    $link = 'http://www.iamempowered.com/goals/' . $varg;
+    //    $output .= '<div class="goal-title">' . l($varg, $link) . '</div>';
+    $output .= '<div class="goal-image-' . $varg . '">' . l('<img src="/' . $img_path . '/images/button_' . $varg . '.png" />', $link, $options) . '</div>';
+    
+    $output .= $tagline;
+    $output .= '<div class="goal-line"></div>';
+  }//*/
+  return $output;
+  /**
+   * jobs & housing work fine
+   * http://www.iamempowered.com/%E2%80%AAgoals/education/rss.xml%E2%80%AC
+   * http://www.iamempowered.com/%E2%80%AAgoals/health/rss.xml%E2%80%AC
+   */
+}
+
+function nul_social_feeds() {
+  $output = '';
+  if (function_exists('jasm_facebook_likebox')) {
+    $output = '<div id="nul-facebook-block">';
+    $output .= '<div class="nul-block-facebook-title">Facebook</div>';
+    $output .= '<div class="nul-block-facebook-inner">';
+    $output .= jasm_facebook_likebox();
+    $output .= '</div><!-- nul-block-facebook-inner -->';
+    $output .= '</div><!-- nul-facebook-block -->';
+  }
+  if (function_exists('jasm_twitter_profilebox')) {
+    $output .= '<div id="nul-twitter-block">';
+    $output .= '<div class="nul-block-twitter-title">Twitter</div>';
+    $output .= '<div class="nul-block-twitter-inner">';
+    $output .= jasm_twitter_profilebox();
+    $output .= '</div><!-- nul-block-twitter-inner -->
+    </div><!-- nul-twitter-block -->';
+  }
+  return $output;
+}
+
+function nul_latest_pr_events() {
+  /**
+   * supply the display id, and optionally an array of arguments to be passed in
+   * views_embed_view('view_name', 'block_display_id', 'argument');
+   * or
+   * print render(module_invoke('views', 'block_view', 'DELTA', 'ARGUMENT'));
+   * from http://api.drupal.org/api/drupal/includes!module.inc/function/module_invoke/7 comments
+   */
+  $output = '';
+  $output .= '<div id="nul-latest-block">';
+  $output .= views_embed_view('article', 'block');
+  $output .= '</div><!-- nul-latest-block -->';
+  $output .= '<div id="nul-pr-events">';
+  $output .= '<div id="nul-press-releases-block">';
+  $output .= '<h2>PRESS RELEASES</h2>';
+  $output .= views_embed_view('article', 'block_1');
+  $output .= '</div><!-- nul-press-releases-block -->
+  						<div id="nul-events-block">';
+  $output .= '<h2>EVENTS</h2>';
+  $output .= views_embed_view('nul_events', 'block');
+  $output .= '</div><!-- nul-events-block -->
+  				</div><!-- nul-pr-events -->';
+
+  return $output;
+}
+
+function nul_newsroom() {
+  $output = '';
+  $output .= '<div id="nul-latest-block">';
+  $output .= views_embed_view('article', 'block');
+  $output .= '</div><!-- nul-latest-block -->';
+  $output .= '<div id="nul-pr-events">';
+  $output .= '<div id="nul-press-releases-block">';
+  $output .= '<h2>PRESS RELEASES</h2>';
+  $output .= views_embed_view('article', 'block_5');
+  $output .= '</div><!-- nul-press-releases-block -->
+  						<div id="nul-events-block">';
+  $output .= '<h2>EVENTS</h2>';
+  $output .= views_embed_view('nul_events', 'block_1');
+  $output .= '</div><!-- nul-events-block -->
+  				</div><!-- nul-pr-events -->';
+  
+  return $output;
+}
+
+function nul_nav_links() {
+  $options = array('attributes' => array('class' => 'nul-nav-link'));
+  $links = array(
+    'programs & initiatives' => 'http://iamempowered.com/programs-and-initiatives',
+    'policy institute' => 'http://iamempowered.com/departments/policy-institute',
+    'state of black america' => 'http://nul.iamempowered.com/content/state-black-america-executive-summary',
+    'talent management' => 'http://iamempowered.com/departments/talent-management',
+    'jobs network' => 'http://iamempowered.com/departments/jobsnetwork',
+    'volunteer programs' => 'http://nul.iamempowered.com/get-involved/volunteer',
+    'local affiliates' => 'http://www.iamempowered.com/departments/affiliate-services',
+    'join the community' => 'http://iamempowered.com/dashboard',
+    'donate' => 'https://org2.democracyinaction.org/o/5666/p/salsa/donation/common/public/?donate_page_KEY=7889&track=201112iaehp',
+  );
+  $output = '';
+  $output .= '<div id="nul-nav-block">';
+//  $output .= '<h2 class="nul-nav">NAVIGATION</h2>';
+  $i = 1;
+  foreach ($links as $title => $link) {
+    $output .= l($title, $link, $options);
+    ($i++ != count($links)) ? $output .= '<div class="goal-line"></div>': $output .= '<br /> <br />';
+  }
+  $output .= '</div><!-- nul-nav-block -->';
+  return $output;
+}
+
+function nul_banner() {
+  $img_path = drupal_get_path('module', 'nul');
+//  drupal_add_js(drupal_get_path('module', 'flowplayer') . '/flowplayer.ipad-3.2.10.js');
+//  drupal_add_js(drupal_get_path('module', 'flowplayer') . '/flowplayer/example/flowplayer.ipad-3.2.10.min.js');
+  $output = '';
+  $output .= '<div id="nul-banner">';
+  $output .= views_embed_view('article', 'block_2');
+  $output .= '</div><!-- nul-banner -->';
+ 
+  $output .= '<div id="nul-video-player">';
+  $output .= views_embed_view('videos', 'block');
+  $output .= '<div id="nul-local-highlight">';
+  $output .= '<a href="http://iamempowered.com/BTFETOOLKIT"><img  src="/' . $img_path . '/images/nulpi_highlight.png" </a>';
+  $output .= '</div><!-- nul-local-highlight -->';
+  return $output;
+}
+
+function nul_social_banner($locale) {
+  drupal_add_css(drupal_get_path('module', 'nul') . '/nul.css');
+  $fblink = 'http://facebook.com/National.Urban.League';
+  $twlink = 'http://twitter.com/NatUrbanLeague';
+  $lilink = 'http://linkedin.com/company/national-urban-league';
+  $ytlink = 'http://www.youtube.com/user/IAmEmpoweredVideo';
+  $output = '
+  			<div id="nul_' . $locale . '_social_banner">
+
+            <img alt="iamempowered.com logo" src="/' . drupal_get_path('module', 'nul') . '/images/social_media_banner_final.jpg">
+
+          <ul id="' . $locale . '_map" class="nul_banner_image_map">
+            <li><a class="banner-facebook" href="' . $fblink . '" title="Facebook"><span><b>Facebook</b><br>
+                Connect with us on Facebook.</span></a></li>
+
+            <li><a class="banner-twitter" href="' . $twlink . '" title="Twitter"><span><b>Twitter</b><br>
+                Follow us on Twitter.</span></a></li>
+
+            <li><a class="banner-linkedin" href="' . $lilink . '" title="Linkedin"><span><b>Linkedin</b><br>
+                Network with us on Linkedin.</span></a></li>
+
+            <li><a class="banner-youtube" href="' . $ytlink . '" title="YouTube"><span><b>YouTube</b><br>
+                See what we&rsquo;re doing on YouTube.</span></a></li>
+        	</ul>
+        </div> <!-- nul_' . $locale . '_iamemp_logo -->';
+  return $output;
+}
+
+function nul_ticker() {
+  $output = '';
+  $output .= '<div id="nul-ticker-block">';
+  $output .= views_embed_view('article', 'block_3');
+  $output .= '</div><!-- nul-ticker-block -->';
+  return $output;
+  dsm('views_embed_view');
+}
+
+function nul_above_footer() {
+  $output = '';
+  $output .= '<div id="nul-above-footer-block">';
+  $output .= '<div id="nul-above-footer-left">';
+  $nul_nav = menu_tree_all_data(variable_get('menu_main_links_source', 'main-menu'), '', 2);
+  $output .= nuliae_render_block($nul_nav, 'nul_footer_nav');
+  $output .= '</div><!-- nul-above-footer-left -->';
+/**  
+*  $output .= '<div id="nul-above-footer-right">';
+*  $output .= '<img src="/' . drupal_get_path('module', 'nul') . '/images/accredidation.png" />';
+*  $output .= '</div><!-- nul-above-footer-right -->';
+*/
+  $output .= '</div><!-- nul-above-footer-block -->';
+  return $output;
+}
+
+function nul_footer() {
+//  $output = nuliae_footer();
+  $output .= '
+  	<div class="clearfix"></div>
+    <div id="nul-footer-menu">';
+  $output .= nuliae_render_menu(menu_tree_all_data('menu-nul-footer', '', 2), 'menu-nul-footer');
+  $output .= '</div><!-- nul-footer-menu -->
+  	<div id="nul-copyright">&copy; 2012 National Urban League</div>
+  	';
+
+  return $output;
+}
+
+function nul_header() {
+ // $output = nuliae_iemamp_logo('header');
+  $img_path = drupal_get_path('module', 'nul');
+  $output = '<div id="nul-local-logo-right">';
+  $output .=  '<img src="/' . $img_path . '/images/nul_local_logo_right.png" />';
+  $output .= '</div>';
+  return $output;
+}
+
+function nul_re_marcs() {
+  $img_path = drupal_get_path('module', 'nul');
+  $output = '
+  <div id="nul-pres-desk">
+  	<div id="nul-pres-desk-image"><a href="http://iamempowered.com/departments/presidents-desk"><img src="/' . $img_path . '/images/Opening_ReMarcs.png" /></a></div>
+  </div>';
+  return $output;
+}
+
+function nul_sponsor_ad() {
+  $img_path = drupal_get_path('module', 'nul');
+  $output = '
+  <div id="nul-pres-desk">
+  	<div id="nul-pres-desk-image"><a href="http://www.iamempowered.com/article/2012/03/23/nationwide-tips-and-deals"><img src="/' . $img_path . '/images/Nationwide_sponsor.png" /></a></div>
+  </div>';
+  return $output;
+}
+
+function nul_form_alter(&$form, &$form_state, $form_id) {
+  if($form_id == 'views_exposed_form' && strpos($_SERVER["REQUEST_URI"], '/in-your-area/affiliate-map') === FALSE) {
+    unset($form['#info']['filter-circle']['label']);
+    $form['circle']['value']['#type'] = 'hidden';
+    unset($form['circle']['location']['#field_prefix']);
+    $form['circle']['location']['#size'] = 5;
+    $form['submit']['#value'] = 'Submit';
+    //dsm($form);
+  }
+}
+
+// change submit form to arrow button
+function nul_form_views_exposed_form_alter (&$form, $form_state) {
+  if ($form['#id'] == 'views-exposed-form-affiliate-map-map-page') {
+    $form['submit']['#type'] = 'image_button';
+    $form['submit']['#src'] = drupal_get_path('theme', 'at_area_tn') . '/images/submit.png';
+  }
+  return ($form);
+}
+
+/**
+ * Implements hook_quicktabs_tabstyles().
+ */
+function nul_quicktabs_tabstyles() {
+  $tabstyles_directory = drupal_get_path('module', 'nul') . '/tabstyles';
+  $files = file_scan_directory($tabstyles_directory, '/\.css$/');
+  $tabstyles = array();
+  foreach ($files as $file) {
+    // Skip RTL files.
+    if (!strpos($file->name, '-rtl')) {
+      $tabstyles[$file->uri] = drupal_ucfirst($file->name);
+    }
+  }
+  return $tabstyles;
+}
+
+
+
+http://www.youtube.com/watch?feature=player_embedded&v=dMSnJj3PKf4

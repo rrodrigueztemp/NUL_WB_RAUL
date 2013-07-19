@@ -1,0 +1,343 @@
+/**** RAUL STYLES ****/
+
+/**
+ *
+ * AT-WB Panels 
+ *
+ **/
+.region-two-66-33-first {
+/*	width: 540px; */
+	width: 60%;
+	padding-left: 1%;
+	padding-right: 1%;
+}
+
+.region-two-66-33-second {
+    float: right;
+	width: 33%;
+}
+
+a {
+	text-decoration: none;
+	color: #A10707;
+	font-weight: bold;	
+}
+/*
+.region-two-66-33-first a, .region-two-66-33-second a {
+	text-decoration: none;
+	color: #A10707;
+}
+*/
+
+.views-frontpage-views-showcase a { 
+	font-weight: normal;
+}
+/**
+ * 
+ * Frontpage Latest News Panel
+ *
+ **/
+.pane-frontpage-views-showcase, .pane-quicktabs-wb-news {
+	width: 100%;
+}
+
+
+.wb-news {
+   font-size: 10px;
+   margin-top: 0px;
+   width: 55%;
+} 
+
+.wb-news table {
+	margin-top: 0px;
+}
+
+.wb-news h2 {
+	margin-top: 0px;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+.wb-news .views-field-field-date {
+	white-space: nowrap;
+	vertical-align: text-top;
+	width: 20%;
+	color: blue;
+	font-weight: bold;
+}
+
+.wb-news .views-field-nothing {
+	padding-right: 25px;
+	width: 40%;
+}
+
+.wb-news .views-field-field-main-image {
+	width: 40%;
+}
+
+/* Quicktabs Override */
+ul.quicktabs-tabs.quicktabs-style-sky li a,
+ul.quicktabs-tabs.quicktabs-style-sky li a:visited {
+  background: #A10707 url('images/bg-shade-light.png') repeat-x bottom left;
+  width: 174px;
+}
+
+ul.quicktabs-tabs.quicktabs-style-sky li.active a,
+ul.quicktabs-tabs.quicktabs-style-sky li.active a:visited {
+  border: 1px solid #eee;
+  background: darkblue url('images/bg-shade-dark.png') repeat-x bottom left;
+  width: 174px;
+}
+
+ul.quicktabs-tabs.quicktabs-style-sky li a:hover,
+ul.quicktabs-tabs.quicktabs-style-sky li.active a:hover {
+  text-decoration: none;
+  border-color: #B3B3B3;
+  background: #B3B3B3 url('images/bg-shade-medium.png') repeat-x bottom left;
+  color: #fff;
+  width: 174px;
+}
+
+ul.quicktabs-tabs.quicktabs-style-sky li.active {
+	margin: 0 !important;
+}
+
+/**
+ *
+ * Buerau Alerts
+ *
+ **/
+.wb-bureau-alerts-block {
+	border-style: solid;
+	border-width: medium;
+	border-color: #dddddd;
+	width: 290px;
+/*	margin-left: 13px */
+}
+
+.wb-bureau-alerts-block-header {
+	 background-color: #dddddd;
+}
+
+.wb-bureau-alerts-block-content {
+	font-size: 10px;
+}
+
+.wb-bureau-alerts-block-content p {
+	padding: 3% 3% 0 3%;
+}
+
+.wb-bureau-alerts-block-more {
+	float: right;
+	font-size: 8px;
+	padding: 0 3% 3% 0;
+}
+
+.wb-bureau-alerts-block .views-slideshow-controls-text {
+	text-align: center;
+	padding-bottom: 3%;
+}
+
+/** 
+ *
+ * Events
+ *
+ **/
+.wb-events-block {
+	font-size: 10px;
+	border-width: 1px;
+	border-style: solid;
+	border-width: medium;
+	border-color: #dddddd;
+	width: 290px;
+/*	margin-left: 10px; */
+	height: auto;
+}
+
+.wb-events-block-header {
+	background-color: black;
+	padding: 0 0 3% 3%;
+}
+
+div.wb-events-block-calendar-top {
+	background-image: url('images/calendar_icon/blank_calendar_top.jpg');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+	width: 70px;
+}
+
+div.wb-events-block-calendar-bottom {
+	background-image: url('images/calendar_icon/blank_calendar_bottom.jpg');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	color: black;
+	width: 70px;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.wb-events-block .views-row {
+	margin-bottom: 1%;
+}
+
+.wb-events-block .views-field-field-event-dates {
+	font-weight: bold;
+	text-transform: uppercase;
+	color: blue;
+}
+
+.wb-events-block-content {
+	padding: 5% 3% 0 3%;
+}
+
+.wb-events-block .view-content {
+	/* border-top: solid medium #dddddd;
+	border-left: solid medium #dddddd;
+	border-right: solid medium #dddddd; */
+}
+
+.wb-events-block .view-footer {
+	padding: 1px 5px 5px 0;
+	height: 20px;
+	margin-top: -3px;
+}
+
+.wb-events-block h2 {
+	font-size: 10px;
+	text-transform: uppercase;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.wb-events-block .wb-events-more {
+	float: right;
+	font-size: 8px;
+}
+
+#wb-events-block-today {
+	padding: 2%;
+	text-align: center; 
+	font-weight: bold;
+	text-transform: uppercase;
+	color: blue;
+}
+
+/**
+ *
+ * Watch the Urban League
+ *
+ **/
+.wb-watch-nul-block {
+	border-style: solid;
+	border-width: medium;
+	border-color: #dddddd;
+	width: 290px;
+/*	margin-left: 13px */
+	height: 367px;
+}
+
+.wb-watch-nul-block-content {
+	height: 305px;
+}
+
+.wb-watch-nul-block-content {
+	font-size: 10px;
+}
+
+.wb-watch-nul-block-content p {
+	padding: 3% 3% 0 3%;
+}
+
+.wb-watch-nul-block-more {
+	float: right;
+	font-size: 8px;
+	padding: 0 3% 3% 0;
+}
+
+.wb-watch-nul-block .views-slideshow-controls-text {
+	text-align: center;
+	padding-bottom: 3%;
+}
+
+
+/* General Content Styles */
+div.field-name-field-date {
+	font-style: italic;
+	padding-bottom: 2%;
+}
+
+
+/**
+ *
+ * Footer
+ *
+ **/
+#wb-footer {
+	width: 100%;
+}
+
+#wb-footer .wb-footer-description {
+	text-align: center;
+	font-size: 10px;
+}
+
+#wb-footer .wb-footer-content {
+	font-size: 12px;
+	 background: #A10707;
+	 color: white;
+	 padding: 2% 1% 1% 1%;
+}
+
+#wb-footer a {
+	text-decoration: none;
+	color: white;
+	font-weight: normal;
+}
+
+.wb-footer-menu {
+	clear: both;
+	width: 100%;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 0 0 3% 0;
+}
+
+.wb-footer-menu ul {
+	list-style: none;
+	text-align: center;
+}
+
+.wb-footer-menu ul li {
+	display:inline;
+}
+
+
+.wb-footer-menu li + li {
+  border-left: 1px solid;
+  margin-left: .5em;
+  padding-left: .5em;
+}
+
+.wb-footer-copyright {
+	clear: both;
+	text-align: center;
+	font-size: 8px;
+}
+
+.wb-footer-logos {
+	width: 100%;
+}
+
+.wb-footer-nul-logo {
+	float: left;
+	width: 30%;
+}
+
+.wb-footer-iamemp-logo {
+	display: inline-block;
+	float: right;
+	width: 30%;
+}

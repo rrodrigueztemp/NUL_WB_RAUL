@@ -1,0 +1,8 @@
+name = NUL Social Mobile
+project = "nul_social_mobile"
+description = Social media menu for NUL mobile sites.
+version = 7.x-0.2-beta
+package = "NUL"
+core = 7.x
+files[] = nul_social_mobile.module
+files[] = nul_social_mobile.css

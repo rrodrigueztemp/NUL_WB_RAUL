@@ -1,0 +1,80 @@
+@CHARSET "UTF-8";
+ 
+/*social banner styles*/
+@CHARSET "UTF-8";
+
+.nul_social_mobile_banner_image_map {
+  margin: 0;
+  padding: 0;
+  /*width: 321px;
+  height: 94px;*/
+}
+
+.nul_social_mobile_banner_image_map li {
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+.nul_social_mobile_banner_image_map li a {
+  position:absolute;
+  display:block;
+  /*
+     Specifying a background image
+     (a 1px by 1px transparent gif)
+     fixes a bug in older versions of
+     IE that causeses the block to not
+     render at its full dimensions.
+  */
+  background:url(images/blank.gif);
+}
+
+.nul_social_mobile_banner_image_map li a span { display:none; }
+
+.nul_social_mobile_banner_image_map li a:hover span {
+  position:relative;
+  display:block;
+  width:433px;
+  left:0;
+  top:0;
+  padding:0px;
+  border:1px solid #000;
+  background:#fff;
+  text-decoration:none;
+  color:#000;
+  filter:alpha(opacity=80);
+  opacity:0.8;
+}
+
+.nul_social_mobile_banner_image_map a {
+  width:64px;
+  height:64px;
+}
+
+.nul_social_mobile_banner_image_map a.banner-twitter {
+ left: 1.8475751%; /*8px / 433px = 0.020833333 x 100 */
+ margin-top: -60px;
+}
+
+.nul_social_mobile_banner_image_map a.banner-facebook {
+left: 18.2448037%; /* 79px / 433px */
+ margin-top: -60px;*/
+}
+
+.nul_social_mobile_banner_image_map a.banner-linkedin {
+ left:  34.4110855%; /* 149px / 433px */
+  margin-top: -60px;
+}
+
+.nul_social_mobile_banner_image_map a.banner-youtube {
+ left:  49.8845266%;/* 216px / 433px */
+ margin-top: -60px;
+}
+.nul_social_mobile_banner_image_map a.banner-rss {
+ left: 66.9745958%;/* 290px / 433px */
+ margin-top: -60px;
+}
+.nul_social_mobile_banner_image_map a.banner-instagram {
+ left:  83.1408776%;/*360px / 433px */
+   margin-top: -60px;
+}

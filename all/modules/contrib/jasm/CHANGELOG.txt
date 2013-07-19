@@ -1,0 +1,37 @@
+JASM 7.x-1.2
+------------
+- Twitter Follow button updated to have 250px default. This has no effect on iFrame version (TODO: Make a JS version)
+- #1407932 dillonkin - Included an Instagram service in defaults
+- #1256170 asciikewl - Included a Flattr service
+- Included a Feedburner service
+- Renamed all the admin settings from "In list" to "Enabled" (UX)
+- Fixed a bug where the help doesn't show on the admin page.
+- Include a Feedburner block to subscribe users via email
+- Include a function to render a subscribe users via email link, included in a block and as theme variabe ($jasm_feedburner_link)
+- Include a method of rendering a feedburner block with proper markup using FormsAPI
+
+JASM 6.x-1.2
+------------
+- Added a Twitter Follow button function (and block) - Note the change in block delta (unsure if this will affect existing block placements)
+
+JASM 6.x-1.1
+------------
+- Added Foursquare service to service lists
+- Added a placewidget.com widget for Foursquare (block)
+- Added units into the "interval" field for the Twitter Profile widget settings
+- Fixed a bug where the amount of tweets in the profile box was hardcoded to '10' for some reason. Now uses input value
+- Added a class to the rendered JASM service list (for easier theming)
+
+JASM 6.x-1.0
+------------
+- Added weights to services allowing them to be sorted
+- #1142284 Roger Saner, AE - Patched to do the actual sorting via weight
+- Added a theme variable to print a JASM service list
+- Moved theme variable to only be in page templates
+- #1143890 serguitus - Added at least _some_ documentation to the module. Particularly Facebook page settings
+- Added two additional custom services
+- Some little UX improvements
+
+JASM 6.x-1.0-alpha1
+-------------------
+- My first release.. Ever

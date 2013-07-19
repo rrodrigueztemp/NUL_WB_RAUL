@@ -1,0 +1,29 @@
+@CHARSET "UTF-8";
+
+#nul-tophat-user-menu {
+  width: 118px;
+  height: 56px;
+  display: inline;
+  float: left;
+  padding:5px 10px 5px 15px;
+  font-size:12px;
+  line-height: 1.5em;
+  float:left;
+ 
+}
+
+#nul-tophat-user-menu .nul-tophat-user-link{
+  list-style: none;
+  display: inline;
+}
+
+#nul-tophat-user-menu .nul-tophat-user-link a{
+  text-decoration: none;
+  color: #C51230;
+  font-size:12px;
+}
+
+
+.nul-tophat-user-link {display: block;}
+.nul-tophat-arrow {margin-left:5px;}
+  

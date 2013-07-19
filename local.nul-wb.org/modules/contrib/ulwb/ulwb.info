@@ -1,0 +1,7 @@
+name = ULWB
+project = "ULWB"
+description = National Urban League Washington Bureau site specific functionality
+version = 7.x-0.2-beta
+package = "NUL"
+core = 7.x
+files[] = ulwb.module

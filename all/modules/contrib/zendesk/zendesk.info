@@ -1,0 +1,15 @@
+name = Zendesk remote authentication
+description = "This module enables remote authentication with zendesk"
+package = Custom modules
+core = 7.x
+
+files[] = zendesk.module
+files[] = zendesk.install
+files[] = zendesk.admin.inc
+files[] = lib/Zendesk.lib.php
+; Information added by drupal.org packaging script on 2012-08-16
+version = "7.x-1.3"
+core = "7.x"
+project = "zendesk"
+datestamp = "1345156107"
+

@@ -1,0 +1,69 @@
+@CHARSET "UTF-8";
+
+.nul_image_map {
+  margin: 0;
+  padding: 0;
+  /*width: 321px;
+  height: 94px;*/
+}
+
+.nul_image_map li {
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+.nul_image_map li a {
+  position:absolute;
+  display:block;
+    /*
+       Specifying a background image
+       (a 1px by 1px transparent gif)
+       fixes a bug in older versions of
+       IE that causeses the block to not
+       render at its full dimensions.
+    */
+  background:url(images/blank.gif);
+}
+
+.nul_image_map li a span { display:none; }
+
+.nul_image_map li a:hover span {
+    position:relative;
+    display:block;
+    width:200px;
+    left:20px;
+    top:20px;
+    padding:5px;
+    border:1px solid #000;
+    background:#fff;
+    text-decoration:none;
+    color:#000;
+    filter:alpha(opacity=80);
+    opacity:0.8;
+}
+
+.nul_image_map a {
+  width:18px;
+  height:18px;
+}
+
+.nul_image_map a.facebook {
+  right: 100px;
+  margin-top: -46px;
+}
+
+.nul_image_map a.twitter {
+  right: 80px;
+  margin-top: -46px;
+}
+       
+.nul_image_map a.linkedin {
+  right: 60px;
+  margin-top: -46px;
+}
+       
+.nul_image_map a.youtube {
+  right: 40px;
+  margin-top: -46px;
+}

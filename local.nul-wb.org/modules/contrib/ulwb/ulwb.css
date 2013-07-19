@@ -1,0 +1,39 @@
+@CHARSET "UTF-8";
+
+#alerts{
+	width:100%;
+	background:url('images/alert.jpg') no-repeat;
+	height:205px;
+	margin-left:10px;
+}
+
+#signup{
+    
+    margin-left:6px;
+    text-align:center;
+}
+
+#swingvote{
+    
+    margin-left:10px;
+    text-align:center;
+}
+
+#wb-banner {
+  background-color: #989898;
+  margin-bottom: 5px;
+  width:100%;
+  max-width: 650px;
+  float:left;
+  
+}
+
+#wb-banner h2 a {
+	display:block;
+  color:#000;
+  text-decoration:none;
+  text-transform:uppercase;
+  
+}
+
+.banner-bar{padding:0 0 20px 10px;}

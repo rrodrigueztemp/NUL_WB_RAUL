@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the affiliate content and views feature.
+ */
+
+include_once 'affiliate_content_and_views.features.inc';

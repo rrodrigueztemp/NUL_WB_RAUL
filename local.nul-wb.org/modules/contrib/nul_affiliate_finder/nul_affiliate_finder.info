@@ -1,0 +1,7 @@
+name = NUL Affiliate Finder
+project = "nul"
+description = National Urban League site specific functionality
+version = 7.x-0.2-beta
+package = "NUL"
+core = 7.x
+files[] = nul.module

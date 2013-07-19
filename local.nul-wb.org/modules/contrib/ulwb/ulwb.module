@@ -1,0 +1,88 @@
+<?php
+/**
+ * @file
+ * This module provides functions specific to the UL Washington Bureau site.
+ *
+ * @ingroup nul
+ */
+
+/**
+ * Implementation of hook_block_info().
+ */
+function ulwb_block_info() {
+ 
+  $blocks['alerts'] = array('info' =>  t('Bureau Alerts'));
+  $blocks['swing'] = array('info' =>  t('Swing Vote'));
+  $blocks['signup'] = array('info' =>  t('Sign Up For Updates'));
+  $blocks['rotator-banner'] = array('info' =>  t('Rotator Banner'));
+  return $blocks;
+}
+
+/**
+ * Implementation of hook_block_view().
+ */
+function ulwb_block_view($delta = '') {
+  switch ($delta) {
+    case 'alerts':
+       $block['subject'] = '';
+       $block['content'] = bureau_alerts();
+       break;
+    case 'swing':
+        $block['subject'] = '';
+        $block['content'] = swing_vote();
+        break;
+    case 'signup':
+        $block['subject'] = '';
+        $block['content'] = signup();
+        break;
+    case 'rotator-banner':
+         $block['subject'] = '';
+         $block['content'] = rotator_banner();
+         break;
+    default:
+      $block = array();
+      break;
+  }
+
+  return $block;
+}
+
+ 
+
+function bureau_alerts() {
+  drupal_add_css(drupal_get_path('module', 'ulwb') . '/ulwb.css');
+  $img_path = drupal_get_path('module', 'ulwb');
+  $output = ' <div id="alerts">  </div>';
+  return $output;
+}
+
+function swing_vote() {
+ $img_path = drupal_get_path('module', 'ulwb');
+ $output = '
+  <div id="swingvote">
+  	<div id="swingvote-image"><a href="#"><img src="/' . $img_path . '/images/swingvote.jpg" /></a></div>
+  </div>';
+ return $output;
+}
+
+
+function signup() {
+ $img_path = drupal_get_path('module', 'ulwb');
+ $output = '
+  <div id="signup">
+  	<div id="signup-image"><a href="#"><img src="/' . $img_path . '/images/signup.jpg" /></a></div>
+  </div>';
+ return $output;
+}
+ 
+function rotator_banner() {
+ $img_path = drupal_get_path('module', 'ulwb');
+ $output = '';
+ $output .= '<div id="wb-banner">';
+ $output .= views_embed_view('article', 'block');
+ $output .= '</div><!-- rotator-banner -->';
+ return $output;
+}
+
+
+  

@@ -1,0 +1,8 @@
+name = affiliate-map-openlayers
+core = 7.x
+package = Features
+dependencies[] = ctools
+dependencies[] = openlayers
+features[ctools][] = openlayers:openlayers_maps:1
+features[features_api][] = api:1
+features[openlayers_maps][] = affiliate_map
