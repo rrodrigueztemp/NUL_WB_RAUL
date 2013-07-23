@@ -2,6 +2,41 @@
 
 /**
  *
+ * General Content Styles 
+ *
+ **/
+div.field-name-field-date {
+	font-style: italic;
+	padding-bottom: 2%;
+}
+
+.wb-date {
+	color: blue;
+	font-weight: bold;
+}
+
+.fix-width-10 {
+	width: 10%;
+}
+
+.fix-width-20 {
+	width: 20%;
+}
+
+.fix-width-30 {
+	width: 30%;
+}
+
+.fix-width-40 {
+	width: 40%;
+}
+
+.no-wrap {
+	white-space: nowrap;
+}
+
+/**
+ *
  * AT-WB Panels 
  *
  **/
@@ -28,6 +63,22 @@ a {
 	color: #A10707;
 }
 */
+
+#page-title {
+	background-color: white;
+}
+
+article figure {
+	margin: 0;
+}
+
+article p {
+	padding-top: 2%;
+}
+
+#content {
+	padding-top: 0;
+}
 
 .views-frontpage-views-showcase a { 
 	font-weight: normal;
@@ -225,6 +276,15 @@ div.wb-events-block-calendar-bottom {
 	color: blue;
 }
 
+.node-events .field-name-field-event-dates {
+	padding-top: 20px;
+	font-weight: bold;
+}
+
+.node-events .field-name-field-location, .field-name-field-venue {
+	font-weight: bold;
+}
+
 /**
  *
  * Watch the Urban League
@@ -263,13 +323,6 @@ div.wb-events-block-calendar-bottom {
 }
 
 
-/* General Content Styles */
-div.field-name-field-date {
-	font-style: italic;
-	padding-bottom: 2%;
-}
-
-
 /**
  *
  * Footer
@@ -302,7 +355,7 @@ div.field-name-field-date {
 	width: 100%;
 	text-transform: uppercase;
 	text-align: center;
-	padding: 0 0 3% 0;
+	padding: 0 0 1% 0;
 }
 
 .wb-footer-menu ul {
@@ -340,4 +393,28 @@ div.field-name-field-date {
 	display: inline-block;
 	float: right;
 	width: 30%;
+}
+
+/**
+ *
+ * Recent News
+ *
+ **/
+.wb-recent-news {
+	border-top: dashed;
+	border-width: thin;
+	border-color: #dddddd;
+	font-size: 10px;
+}
+
+.wb-recent-news table {
+	border-collapse: separate;
+}
+
+.wb-recent-news td {
+	vertical-align: text-top;
+}
+
+article.article {
+    min-height: 10px;
 }

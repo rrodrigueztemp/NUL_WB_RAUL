@@ -425,12 +425,12 @@ function nul_footer() {
 }
 
 function nul_header() {
- // $output = nuliae_iemamp_logo('header');
+ //$output = nuliae_iemamp_logo('header');
   $img_path = drupal_get_path('module', 'nul');
   $output = '<div id="nul-local-logo-right">';
   $output .=  '<img src="/' . $img_path . '/images/nul_local_logo_right.png" />';
   $output .= '</div>';
-  return $output;
+  return '';
 }
 
 function nul_re_marcs() {

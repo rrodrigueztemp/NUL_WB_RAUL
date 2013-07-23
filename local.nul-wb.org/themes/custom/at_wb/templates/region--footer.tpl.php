@@ -28,26 +28,19 @@
 	   <?php
 	      $main_menu_tree = menu_tree_all_data('main-menu');
           $main_menu_expanded = menu_tree_output($main_menu_tree);
-
-          // Do our own rendering
-          $html = "<ul>";
-          foreach($main_menu_expanded as $menu) {
-          	if ( isset( $menu['#title'] )) {
-               $html .= "<li><a href='{$menu['#href']}'>{$menu['#title']}</a></li>";
-            }
-          }
-          $html .= "</ul>";
-          print $html;
+		  print drupal_render($main_menu_expanded);
        ?>
        </div>
 
        <div class='wb-footer-logos'>
        	   <div class='wb-footer-nul-logo'>
+            <img src='http://local.nul-wb.org/sites/local.nul-wb.org/files/images/footer/nul_emp_red_logo.png' />
        	   </div>
        	   <div class='wb-footer-iamemp-logo'>
-       	   	   <img src='files/images/footer/iae_logo_community.png' />
+       	   	  <img src='http://local.nul-wb.org/sites/local.nul-wb.org/files/images/footer/iae_logo_community.png' />
        	   </div>
        </div>
+
 	   <div class='wb-footer-copyright'>
 		Copyright &#169;<?php echo date('Y'); ?> National Urban League. All Rights Reserved.
 	   </div>
