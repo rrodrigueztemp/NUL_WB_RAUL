@@ -1,8 +1,0 @@
-name = NUL Tophat
-project = "nul_tophat"
-description = Standard Tophat menu for NUL sites.
-version = 7.x-0.2-beta
-package = "NUL"
-core = 7.x
-files[] = nul_tophat.module
-files[] = nul_tophat.js

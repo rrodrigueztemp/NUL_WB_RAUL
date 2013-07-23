@@ -1,7 +1,0 @@
-name = NULIAE
-project = "nuliae"
-description = Common functions for NUL sites.
-version = 7.x-0.2-beta
-package = "NUL"
-core = 7.x
-files[] = nuliae.module
