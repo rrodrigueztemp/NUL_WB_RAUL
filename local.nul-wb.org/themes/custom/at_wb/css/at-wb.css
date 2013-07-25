@@ -35,6 +35,11 @@ div.field-name-field-date {
 	white-space: nowrap;
 }
 
+.image_align_top_left {
+	float: left;
+	margin: 0 15px 15px 0;
+ }
+
 /**
  *
  * AT-WB Panels 
@@ -57,6 +62,10 @@ a {
 	color: #A10707;
 	font-weight: bold;	
 }
+
+ul.nice-menu ul li {
+    width: 100%;
+}
 /*
 .region-two-66-33-first a, .region-two-66-33-second a {
 	text-decoration: none;
@@ -68,12 +77,14 @@ a {
 	background-color: white;
 }
 
-article figure {
-	margin: 0;
+.article {
+min-height: 100%;
+max-height: 100%;
+overflow: visible;
 }
 
-article p {
-	padding-top: 2%;
+article figure {
+	margin: 0;
 }
 
 #content {
@@ -418,3 +429,29 @@ div.wb-events-block-calendar-bottom {
 article.article {
     min-height: 10px;
 }
+
+/**
+ *
+ * Staff Bios
+ *
+ **/
+
+ div.field.field-name-field-staff-image {
+	float: left;
+	margin: 0 15px 15px 0;
+ }
+
+ div.field.field-name-field-position {
+ 	font-weight: bold;
+ 	font-size: large;
+ 	padding-bottom: 1%;
+ }
+
+ div.wb-staff-bios-position {
+  	font-weight: bold;
+ 	padding-bottom: 1%;
+ }
+
+ div.field.field-name-field-mobile-phone {
+ 	padding-bottom: 1%;
+ }
