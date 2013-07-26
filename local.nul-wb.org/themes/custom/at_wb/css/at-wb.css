@@ -35,10 +35,15 @@ div.field-name-field-date {
 	white-space: nowrap;
 }
 
-.image_align_top_left {
+.image-align-top-left {
 	float: left;
 	margin: 0 15px 15px 0;
  }
+
+.image-align-top-right { 
+	float: right; 
+	margin: 0 0 15px 15px; 
+}
 
 /**
  *
@@ -447,11 +452,38 @@ article.article {
  	padding-bottom: 1%;
  }
 
- div.wb-staff-bios-position {
+section.field-name-field-email, section.field-name-field-office-phone, section.field-name-field-mobile-phone {
+	font-style: italic;
+	line-height: 20px;
+	padding-bottom: 0;
+}
+
+.raul_test {
+	font-style: italic;
+	line-height: 20px;
+	padding-bottom: 0;
+}
+
+/*
+ section.wb-staff-bios-position {
   	font-weight: bold;
  	padding-bottom: 1%;
  }
 
  div.field.field-name-field-mobile-phone {
  	padding-bottom: 1%;
+ }
+ */
+
+
+ /**
+  *
+  * Landing Pages
+  *
+  **/
+
+ .wb-landing-pages {
+ }
+
+ .wb-landing-pages td {
  }
