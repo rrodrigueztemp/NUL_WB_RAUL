@@ -26,7 +26,7 @@
 	<div class='wb-footer-content'>
 	   <div class='wb-footer-menu'>
 	   <?php
-	      $main_menu_tree = menu_tree_all_data('main-menu');
+	      $main_menu_tree = menu_tree_all_data('main-menu', NULL, 1);
           $main_menu_expanded = menu_tree_output($main_menu_tree);
 		  print drupal_render($main_menu_expanded);
        ?>

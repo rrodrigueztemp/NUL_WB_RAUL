@@ -487,3 +487,14 @@ section.field-name-field-email, section.field-name-field-office-phone, section.f
 
  .wb-landing-pages td {
  }
+	 
+/**
+  *
+  * Research
+  *
+  **/
+
+.wb-research {
+	width: 100%;
+}
+
