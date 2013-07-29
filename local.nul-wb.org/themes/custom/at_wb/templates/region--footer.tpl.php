@@ -34,10 +34,10 @@
 
        <div class='wb-footer-logos'>
        	   <div class='wb-footer-nul-logo'>
-            <img src='http://local.nul-wb.org/sites/local.nul-wb.org/files/images/footer/nul_emp_red_logo.png' />
+            <a href="http://www.nul.org" target="_blank"><img src='http://local.nul-wb.org/sites/local.nul-wb.org/files/images/footer/nul_emp_red_logo.png' /></a>
        	   </div>
        	   <div class='wb-footer-iamemp-logo'>
-       	   	  <img src='http://local.nul-wb.org/sites/local.nul-wb.org/files/images/footer/iae_logo_community.png' />
+       	   	  <a href="http://www.nul.org" target="_blank"><img src='http://local.nul-wb.org/sites/local.nul-wb.org/files/images/footer/iae_logo_community.png' /></a>
        	   </div>
        </div>
 
