@@ -45,6 +45,10 @@ div.field-name-field-date {
 	margin: 0 0 15px 15px; 
 }
 
+.node-content .field-name-body {
+	padding-top: 2%;
+}
+
 /**
  *
  * AT-WB Panels 
@@ -279,9 +283,9 @@ div.wb-events-block-calendar-bottom {
 	margin-bottom: 0;
 }
 
-.wb-events-block .wb-events-more {
-	float: right;
-	font-size: 8px;
+.wb-events-block .more-link {
+	font-size: 10px;
+	padding: 2% 2% 2% 0;
 }
 
 #wb-events-block-today {
@@ -446,6 +450,10 @@ article.article {
 	margin: 0 15px 15px 0;
  }
 
+ div.wb-staff-bios-position {
+ 	font-weight: bold;
+ }
+
  div.field.field-name-field-position {
  	font-weight: bold;
  	font-size: large;
@@ -458,23 +466,18 @@ section.field-name-field-email, section.field-name-field-office-phone, section.f
 	padding-bottom: 0;
 }
 
-.raul_test {
-	font-style: italic;
-	line-height: 20px;
-	padding-bottom: 0;
+.node-staff section.field {
+	height: auto;
 }
 
-/*
- section.wb-staff-bios-position {
-  	font-weight: bold;
- 	padding-bottom: 1%;
- }
+div.wb-staff-label-inline {
+	font-weight: bold;
+	display: inline;
+}
 
- div.field.field-name-field-mobile-phone {
- 	padding-bottom: 1%;
- }
- */
-
+div.skip_line {
+	padding-bottom: 2%;
+}
 
  /**
   *
@@ -497,4 +500,5 @@ section.field-name-field-email, section.field-name-field-office-phone, section.f
 .wb-research {
 	width: 100%;
 }
+
 
