@@ -35,10 +35,13 @@ th {
 tr.even,
 tr.odd {
   border-bottom: none;
+  background-color: white;
 }
 tr.odd,
 tr.info {
+/*
   background-color: #f5f5f5;
+*/
 }
 tr.even {
   background-color: #fff;
@@ -59,8 +62,10 @@ td.region,
 td.module,
 td.container td.category {
   background-color: #eee;
+  /*
   border-bottom: 1px solid #ccc;
   border-top: 20px solid #fff;
+  */
   color: #222;
   font-weight: 700;
 }
